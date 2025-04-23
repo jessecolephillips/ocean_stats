@@ -1,0 +1,10 @@
+---
+title: "The Ocean Statistics Website"
+subtitle: "Jesse Phillips' webpages for Oceanography and Statistics content"
+---
+
+## On this site
+
+The centralized site for oceanographic and statistical content curated by MSc student Jesse Phillips. The connected pages contain past and current projects, blog posts and tutorials.
+
+UPDATE: This website is currently a work in progress \[23/04/2025\].

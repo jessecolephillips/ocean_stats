@@ -1,0 +1,31 @@
+project:
+  type: website
+
+website:
+  title: "OceanStats"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - projects.qmd
+      - blogs.qmd
+      - text: Tutorials
+        menu: 
+          - text: "placeholder 1"
+          - text: "placeholder 2"
+      - about.qmd
+      
+    right: 
+      - icon: youtube
+        href: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+        aria-label: YouTube
+
+format:
+  html:
+    theme: 
+      light: sandstone
+    css: styles.css
+    toc: true
+
+editor: visual
+

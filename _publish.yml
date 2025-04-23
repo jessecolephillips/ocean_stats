@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: 87d8f3b9-5cbf-44b7-87a9-eca8579606f9
+      url: 'https://oceanstats.netlify.app'

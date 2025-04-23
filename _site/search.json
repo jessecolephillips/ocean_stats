@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This is an edit\nThis is a second edit, hopefully nothing broke bro"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "The Ocean Statistics Website",
+    "section": "",
+    "text": "The centralized site for oceanographic and statistical content curated by MSc student Jesse Phillips. The connected pages contain past and current projects, blog posts and tutorials.\nUPDATE: This website is currently a work in progress [23/04/2025].\nCheck the About section [here](about.qmd)."
+  },
+  {
+    "objectID": "index.html#on-this-site",
+    "href": "index.html#on-this-site",
+    "title": "The Ocean Statistics Website",
+    "section": "",
+    "text": "The centralized site for oceanographic and statistical content curated by MSc student Jesse Phillips. The connected pages contain past and current projects, blog posts and tutorials.\nUPDATE: This website is currently a work in progress [23/04/2025].\nCheck the About section [here](about.qmd)."
+  },
+  {
+    "objectID": "blogs.html",
+    "href": "blogs.html",
+    "title": "Blogs",
+    "section": "",
+    "text": "Satellite vs in situ data projects"
+  }
+]
