@@ -2,6 +2,4 @@
 title: "About"
 ---
 
-This is an edit
-
-This is a second edit, hopefully nothing broke bro
+I created this website as a personal project. A place to upload all the of oceanographic work that I've been doing - while also testing some coding skills I've been working on. Over the course of 2025, I hope to develop this into a full portfolio of my Masters research on fluctuating ocean temperatures and extreme events.
