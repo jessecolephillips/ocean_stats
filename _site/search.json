@@ -11,14 +11,14 @@
     "href": "index.html",
     "title": "The Ocean Statistics Website",
     "section": "",
-    "text": "The centralized site for oceanographic and statistical content curated by MSc student Jesse Phillips. The connected pages contain past and current projects, blog posts and tutorials.\nUPDATE: This website is currently a work in progress [24/04/2025]."
+    "text": "The centralized site for oceanographic and statistical content curated by MSc student Jesse Phillips. The connected pages contain past and current projects, blog posts and tutorials.\nUPDATE: This website is currently a work in progress [24/04/2025].\n\n\nHere is where I will upload past and current research on oceanographic and statistical topics.\n\n\n\nInteresting things I come across that I would like to speak on.\n\n\n\nInstructional pieces on how to accomplish various tasks I’ve come across, will probably include some or other coding."
   },
   {
     "objectID": "index.html#on-this-site",
     "href": "index.html#on-this-site",
     "title": "The Ocean Statistics Website",
     "section": "",
-    "text": "The centralized site for oceanographic and statistical content curated by MSc student Jesse Phillips. The connected pages contain past and current projects, blog posts and tutorials.\nUPDATE: This website is currently a work in progress [24/04/2025]."
+    "text": "The centralized site for oceanographic and statistical content curated by MSc student Jesse Phillips. The connected pages contain past and current projects, blog posts and tutorials.\nUPDATE: This website is currently a work in progress [24/04/2025].\n\n\nHere is where I will upload past and current research on oceanographic and statistical topics.\n\n\n\nInteresting things I come across that I would like to speak on.\n\n\n\nInstructional pieces on how to accomplish various tasks I’ve come across, will probably include some or other coding."
   },
   {
     "objectID": "blogs.html",
@@ -26,5 +26,12 @@
     "title": "Blogs",
     "section": "",
     "text": "Satellite vs in situ data projects"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Extreme temperature events in the ocean - a literature review\nChanges in SST ranges and extreme event frequency along the Southern African coastline\nStatistically defining extreme thermal fluctuations in the ocean"
   }
 ]
