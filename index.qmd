@@ -7,7 +7,7 @@ subtitle: "Jesse Phillips' webpages for Oceanography and Statistics content"
 
 The centralized site for oceanographic and statistical content curated by MSc student Jesse Phillips. The connected pages contain past and current projects, blog posts and tutorials.
 
-UPDATE: This website is currently a work in progress \[24/04/2025\].
+NB UPDATE: This website will be overhauled and repurposed for my PhD (and beyond) research...big things incoming \[31/01/2026\].
 
 ### Projects
 
