@@ -5,18 +5,18 @@ subtitle: "Jesse Phillips' webpages for Oceanography and Statistics content"
 
 ## On this site
 
-The centralized site for oceanographic and statistical content curated by MSc student Jesse Phillips. The connected pages contain past and current projects, blog posts and tutorials.
+The centralized site for oceanographic and statistical content curated by (potential) PhD student Jesse Phillips. The connected pages contain past and current projects, blog posts and tutorials.
 
 NB UPDATE: This website will be overhauled and repurposed for my PhD (and beyond) research...big things incoming \[31/01/2026\].
 
 ### Projects
 
-Here is where I will upload past and current research on oceanographic and statistical topics.
+Here is where I will upload past and current research on oceanographic and statistical topics. That will include, but not be limited to, my work and research as a postgraduate student, future research outputs (including abstracts and summaries of my papers), and any coding work I may end up doing.
 
 ### Blogs
 
-Interesting things I come across that I would like to speak on.
+Interesting things I come across that I would like to speak on. These can be pressing issues/debates in current science, or new discoveries that I find interesting enough to write on.
 
 ### Tutorials
 
-Instructional pieces on how to accomplish various tasks I've come across, will probably include some or other coding.
+Instructional pieces on how to accomplish various tasks I've come across, will probably include some or other coding. These will most likely involve R, linux, or anything else that I taught myself that I can help teach others.

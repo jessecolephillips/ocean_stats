@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Extreme temperature events in the ocean - a literature review\nChanges in SST ranges and extreme event frequency along the Southern African coastline\nStatistically defining extreme thermal fluctuations in the ocean"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -11,14 +18,14 @@
     "href": "index.html",
     "title": "The Ocean Statistics Website",
     "section": "",
-    "text": "The centralized site for oceanographic and statistical content curated by MSc student Jesse Phillips. The connected pages contain past and current projects, blog posts and tutorials.\nUPDATE: This website is currently a work in progress [24/04/2025].\n\n\nHere is where I will upload past and current research on oceanographic and statistical topics.\n\n\n\nInteresting things I come across that I would like to speak on.\n\n\n\nInstructional pieces on how to accomplish various tasks I’ve come across, will probably include some or other coding."
+    "text": "The centralized site for oceanographic and statistical content curated by (potential) PhD student Jesse Phillips. The connected pages contain past and current projects, blog posts and tutorials.\nNB UPDATE: This website will be overhauled and repurposed for my PhD (and beyond) research…big things incoming [31/01/2026].\n\n\nHere is where I will upload past and current research on oceanographic and statistical topics. That will include, but not be limited to, my work and research as a postgraduate student, future research outputs (including abstracts and summaries of my papers), and any coding work I may end up doing.\n\n\n\nInteresting things I come across that I would like to speak on. These can be pressing issues/debates in current science, or new discoveries that I find interesting enough to write on.\n\n\n\nInstructional pieces on how to accomplish various tasks I’ve come across, will probably include some or other coding. These will most likely involve R, linux, or anything else that I taught myself that I can help teach others."
   },
   {
     "objectID": "index.html#on-this-site",
     "href": "index.html#on-this-site",
     "title": "The Ocean Statistics Website",
     "section": "",
-    "text": "The centralized site for oceanographic and statistical content curated by MSc student Jesse Phillips. The connected pages contain past and current projects, blog posts and tutorials.\nUPDATE: This website is currently a work in progress [24/04/2025].\n\n\nHere is where I will upload past and current research on oceanographic and statistical topics.\n\n\n\nInteresting things I come across that I would like to speak on.\n\n\n\nInstructional pieces on how to accomplish various tasks I’ve come across, will probably include some or other coding."
+    "text": "The centralized site for oceanographic and statistical content curated by (potential) PhD student Jesse Phillips. The connected pages contain past and current projects, blog posts and tutorials.\nNB UPDATE: This website will be overhauled and repurposed for my PhD (and beyond) research…big things incoming [31/01/2026].\n\n\nHere is where I will upload past and current research on oceanographic and statistical topics. That will include, but not be limited to, my work and research as a postgraduate student, future research outputs (including abstracts and summaries of my papers), and any coding work I may end up doing.\n\n\n\nInteresting things I come across that I would like to speak on. These can be pressing issues/debates in current science, or new discoveries that I find interesting enough to write on.\n\n\n\nInstructional pieces on how to accomplish various tasks I’ve come across, will probably include some or other coding. These will most likely involve R, linux, or anything else that I taught myself that I can help teach others."
   },
   {
     "objectID": "blogs.html",
@@ -26,12 +33,5 @@
     "title": "Blogs",
     "section": "",
     "text": "Satellite vs in situ data projects"
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Extreme temperature events in the ocean - a literature review\nChanges in SST ranges and extreme event frequency along the Southern African coastline\nStatistically defining extreme thermal fluctuations in the ocean"
   }
 ]
