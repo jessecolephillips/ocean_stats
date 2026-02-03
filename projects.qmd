@@ -2,6 +2,14 @@
 title: "Projects"
 ---
 
+## My Postgraduate Studies 
+
+### BSc Hons
+
+Analysing survival of Cape Cormorant chicks after nest abandonment following a heatwave
+
+### MSc
+
 Extreme temperature events in the ocean - a literature review
 
 Changes in SST ranges and extreme event frequency along the Southern African coastline
