@@ -2,7 +2,7 @@
 title: "Projects"
 ---
 
-## My Postgraduate Studies 
+## My Postgraduate Studies
 
 ### BSc Hons
 
@@ -15,3 +15,7 @@ Extreme temperature events in the ocean - a literature review
 Changes in SST ranges and extreme event frequency along the Southern African coastline
 
 Statistically defining extreme thermal fluctuations in the ocean
+
+### PhD Proposal
+
+PhD proposal linked [here](phd_page.qmd).

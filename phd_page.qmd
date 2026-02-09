@@ -1,0 +1,6 @@
+---
+title: "PhD Proposal Page"
+format: html
+---
+
+This page will serve as the spot where I load all of the current info I have on my prospective PhD.

@@ -14,11 +14,6 @@ website:
           - text: "placeholder 1"
           - text: "placeholder 2"
       - about.qmd
-      
-    right: 
-      - icon: youtube
-        href: https://www.youtube.com/watch?v=dQw4w9WgXcQ
-        aria-label: YouTube
 
 format:
   html:
