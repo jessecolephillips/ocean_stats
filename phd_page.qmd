@@ -3,4 +3,126 @@ title: "PhD Proposal Page"
 format: html
 ---
 
-This page will serve as the spot where I load all of the current info I have on my prospective PhD.
+# Summary
+
+This thesis defines ecoregions within the Benguela Eastern Boundary Upwelling System based on the intensity and frequency of upwelling. It then analyzes the impact of these ecoregions on biological productivity, specifically focusing on:
+
+1.  **Kelp Abundance:** Investigating how kelp abundance varies across the different upwelling-defined ecoregions. The goal is to identify which regions exhibit the highest kelp abundance.
+
+2.  **Chlorophyll-a (Phytoplankton Abundance):** Examining the relationship between the upwelling ecoregions and phytoplankton abundance, as indicated by chlorophyll-a concentrations.
+
+The research aims to understand how physical oceanographic features (upwelling) structure the ecosystem and influence the distribution of key primary producers like kelp and phytoplankton.
+
+# PhD Research Timeline
+
+1.  **Define Ecoregions:** Analyze upwelling data (SST) to define distinct ecoregions within the Benguela EBUS.
+
+2.  **Analyze Kelp Abundance:** Investigate the relationship between the defined ecoregions and kelp abundance. Determine which ecoregions have the highest kelp abundance.
+
+3.  **Analyze Chlorophyll-a Abundance:** Investigate the relationship between the defined ecoregions and chlorophyll-a abundance (phytoplankton).
+
+4.  **Synthesize Findings:** Synthesize the results from the kelp and chlorophyll-a analyses to understand the broader ecological consequences of the upwelling-defined ecoregions.
+
+# Ideas for Research Questions and Objectives
+
+Here is a list of potential research questions and objectives that could be explored within the scope of this PhD project. These are designed to be of a narrower scale than the main research question and could potentially form the basis of individual data chapters.
+
+------------------------------------------------------------------------
+
+### Research Question 1: Temporal Dynamics of Upwelling Characteristics
+
+**Question:** How have the key characteristics of upwelling events (frequency, intensity, duration) changed over the past 40 years within each of the defined ecoregions of the Benguela system?
+
+**Objectives:**
+
+-   To develop a robust methodology for identifying and characterizing individual upwelling events from the 40-year SST dataset.
+
+-   To quantify and compare long-term trends and inter-annual variability in upwelling frequency, intensity, and duration for each ecoregion.
+
+-   To investigate potential correlations between these trends and large-scale climate indices (e.g., Southern Annular Mode, El Niño-Southern Oscillation).
+
+------------------------------------------------------------------------
+
+### Research Question 2: The Spatio-Temporal Response of Kelp to Upwelling
+
+**Question:** What is the temporal lag between upwelling events and the response of kelp abundance, and how does this relationship vary spatially across the different ecoregions?
+
+**Objectives:**
+
+-   To perform a time-series analysis to determine the characteristic time-lag between upwelling events (of varying intensity/duration) and the peak response in kelp abundance.
+
+-   To compare this time-lag across the different upwelling-defined ecoregions to see if the kelp populations in different areas have different response times.
+
+-   To develop a predictive model for kelp abundance based on preceding upwelling conditions for each ecoregion.
+
+------------------------------------------------------------------------
+
+### Research Question 3: Phytoplankton Bloom Dynamics and Upwelling Thresholds
+
+**Question:** Is there a minimum threshold of upwelling intensity or duration required to trigger a significant phytoplankton bloom (as measured by chlorophyll-a concentration)?
+
+**Objectives:**
+
+-   To model the relationship between upwelling characteristics and chlorophyll-a concentrations.
+
+-   To explicitly test for a non-linear relationship or a "tipping point" where a small change in upwelling leads to a large change in chlorophyll-a.
+
+-   To analyze how this threshold may vary seasonally or across the different ecoregions.
+
+------------------------------------------------------------------------
+
+### Research Question 4: Investigating a Kelp vs. Phytoplankton Trophic Interaction
+
+**Question:** Is there evidence of competition for nutrients or a synergistic relationship between near-shore kelp forests and offshore phytoplankton populations following upwelling events?
+
+**Objectives:**
+
+-   To investigate the correlation between kelp abundance and chlorophyll-a concentrations in the months following major upwelling events, controlling for the intensity of the upwelling.
+
+-   To explore whether years with high kelp abundance correspond to years with lower (or higher) than expected phytoplankton biomass, given the upwelling conditions.
+
+------------------------------------------------------------------------
+
+### Research Question 5: The Impact of Extreme Climatic Events
+
+**Question:** How do extreme climatic events, such as marine heatwaves or anomalous upwelling conditions (e.g., a prolonged absence of upwelling or a season of exceptionally intense upwelling), impact the resilience and recovery of kelp forests and phytoplankton populations?
+
+**Objectives:**
+
+-   To identify and categorize extreme events within the 40-year oceanographic dataset.
+
+-   To analyze the corresponding changes in kelp and chlorophyll-a abundance during and after these events.
+
+-   To quantify the recovery time for both kelp and phytoplankton to return to a pre-event baseline state.
+
+------------------------------------------------------------------------
+
+### Research Question 6: The Stability of Ecoregion Boundaries
+
+**Question:** Do the spatial boundaries of the upwelling-defined ecoregions exhibit significant seasonal or inter-annual shifts, and if so, how do these shifts correlate with broader climate patterns?
+
+**Objectives:**
+
+-   To map the spatial extent of the defined ecoregions for each year and/or season in the 40-year dataset.
+
+-   To analyze the variability of these boundaries and test for correlations with climate indices like ENSO.
+
+-   To consider the implications of shifting ecoregion boundaries for the long-term monitoring of kelp and phytoplankton.
+
+# Data 
+
+Upwelling - sea surface temperature (SST) data over a period of approx. 40 years will be used to determine upwelling trends along the west coast of southern Africa (talk to Tom)
+
+Data Products:
+
+-   OISST (coarse resolution) can give broad overview to start
+
+-   OSTIA
+
+-   MUR
+
+-   other?
+
+Kelp - AJ has access to approx. 40 years of kelp biomass and/or abundance data that I can use to correlate with upwelling
+
+Phytoplankton - will have to find chlorophyll-a data that matches spatially and temporally
