@@ -14,11 +14,16 @@ website:
           - text: "placeholder 1"
           - text: "placeholder 2"
       - about.qmd
+    tools:
+      - icon: github
+        href: https://github.com/jessecolephillips/ocean_stats
 
 format:
   html:
-    #theme: litera
-    css: bootstrap.css
+    theme: 
+      light: flatly
+      dark: darkly
+    #css: styles.css
     toc: true
 
 editor: visual
