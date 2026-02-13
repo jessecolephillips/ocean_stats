@@ -13,6 +13,8 @@ This thesis defines ecoregions within the Benguela Eastern Boundary Upwelling Sy
 
 The research aims to understand how physical oceanographic features (upwelling) structure the ecosystem and influence the distribution of key primary producers like kelp and phytoplankton.
 
+------------------------------------------------------------------------
+
 # PhD Research Timeline
 
 1.  **Define Ecoregions:** Analyze upwelling data (SST) to define distinct ecoregions within the Benguela EBUS.
@@ -23,11 +25,11 @@ The research aims to understand how physical oceanographic features (upwelling) 
 
 4.  **Synthesize Findings:** Synthesize the results from the kelp and chlorophyll-a analyses to understand the broader ecological consequences of the upwelling-defined ecoregions.
 
+------------------------------------------------------------------------
+
 # Ideas for Research Questions and Objectives
 
 Here is a list of potential research questions and objectives that could be explored within the scope of this PhD project. These are designed to be of a narrower scale than the main research question and could potentially form the basis of individual data chapters.
-
-------------------------------------------------------------------------
 
 ### Research Question 1: Temporal Dynamics of Upwelling Characteristics
 
@@ -41,8 +43,6 @@ Here is a list of potential research questions and objectives that could be expl
 
 -   To investigate potential correlations between these trends and large-scale climate indices (e.g., Southern Annular Mode, El Niño-Southern Oscillation).
 
-------------------------------------------------------------------------
-
 ### Research Question 2: The Spatio-Temporal Response of Kelp to Upwelling
 
 **Question:** What is the temporal lag between upwelling events and the response of kelp abundance, and how does this relationship vary spatially across the different ecoregions?
@@ -54,8 +54,6 @@ Here is a list of potential research questions and objectives that could be expl
 -   To compare this time-lag across the different upwelling-defined ecoregions to see if the kelp populations in different areas have different response times.
 
 -   To develop a predictive model for kelp abundance based on preceding upwelling conditions for each ecoregion.
-
-------------------------------------------------------------------------
 
 ### Research Question 3: Phytoplankton Bloom Dynamics and Upwelling Thresholds
 
@@ -69,8 +67,6 @@ Here is a list of potential research questions and objectives that could be expl
 
 -   To analyze how this threshold may vary seasonally or across the different ecoregions.
 
-------------------------------------------------------------------------
-
 ### Research Question 4: Investigating a Kelp vs. Phytoplankton Trophic Interaction
 
 **Question:** Is there evidence of competition for nutrients or a synergistic relationship between near-shore kelp forests and offshore phytoplankton populations following upwelling events?
@@ -80,8 +76,6 @@ Here is a list of potential research questions and objectives that could be expl
 -   To investigate the correlation between kelp abundance and chlorophyll-a concentrations in the months following major upwelling events, controlling for the intensity of the upwelling.
 
 -   To explore whether years with high kelp abundance correspond to years with lower (or higher) than expected phytoplankton biomass, given the upwelling conditions.
-
-------------------------------------------------------------------------
 
 ### Research Question 5: The Impact of Extreme Climatic Events
 
@@ -95,8 +89,6 @@ Here is a list of potential research questions and objectives that could be expl
 
 -   To quantify the recovery time for both kelp and phytoplankton to return to a pre-event baseline state.
 
-------------------------------------------------------------------------
-
 ### Research Question 6: The Stability of Ecoregion Boundaries
 
 **Question:** Do the spatial boundaries of the upwelling-defined ecoregions exhibit significant seasonal or inter-annual shifts, and if so, how do these shifts correlate with broader climate patterns?
@@ -108,6 +100,8 @@ Here is a list of potential research questions and objectives that could be expl
 -   To analyze the variability of these boundaries and test for correlations with climate indices like ENSO.
 
 -   To consider the implications of shifting ecoregion boundaries for the long-term monitoring of kelp and phytoplankton.
+
+------------------------------------------------------------------------
 
 # Data
 
