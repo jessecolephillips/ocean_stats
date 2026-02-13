@@ -17,6 +17,15 @@ website:
     tools:
       - icon: github
         href: https://github.com/jessecolephillips/ocean_stats
+  search: 
+    location: navbar
+    type: overlay
+  announcement: 
+    icon: info-circle
+    dismissable: true
+    content: "This site is a work in progress. Information is still being added on a daily basis."
+    type: secondary
+    position: below-navbar
 
 format:
   html:
