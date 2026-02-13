@@ -11,7 +11,7 @@ NB UPDATE: This website will be overhauled and repurposed for my PhD (and beyond
 
 ### Projects
 
-PINNED: [PhD Project Proposal Page](phd_page.qmd)
+PINNED: [PhD Project Proposal Page](projects/phd_page.qmd)
 
 Here is where I will upload past and current research on oceanographic and statistical topics. That will include, but not be limited to, my work and research as a postgraduate student, future research outputs (including abstracts and summaries of my papers), and any coding work I may end up doing.
 

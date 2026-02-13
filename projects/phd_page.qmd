@@ -109,19 +109,13 @@ Here is a list of potential research questions and objectives that could be expl
 
 -   To consider the implications of shifting ecoregion boundaries for the long-term monitoring of kelp and phytoplankton.
 
-# Data 
+# Data
 
 Upwelling - sea surface temperature (SST) data over a period of approx. 40 years will be used to determine upwelling trends along the west coast of southern Africa (talk to Tom)
 
 Data Products:
 
--   OISST (coarse resolution) can give broad overview to start
-
--   OSTIA
-
--   MUR
-
--   other?
+SST - Coarse resolution projects are lightweight to download and plot: OISST and KelpWatch. Better resolution for final product: OSTIA/MUR/etc.
 
 Kelp - AJ has access to approx. 40 years of kelp biomass and/or abundance data that I can use to correlate with upwelling
 

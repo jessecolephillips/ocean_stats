@@ -18,4 +18,4 @@ Statistically defining extreme thermal fluctuations in the ocean
 
 ### PhD Proposal
 
-PhD proposal linked [here](phd_page.qmd).
+PhD proposal linked [here](projects/phd_page.qmd).
