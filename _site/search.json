@@ -53,6 +53,6 @@
     "href": "tutorials/rerddap_tut.html",
     "title": "Downloading Environmental Data using rerddap",
     "section": "",
-    "text": "This vignette will detail how to download environmental/oceanographic satellite data from ERDDAP servers using the rerddap package"
+    "text": "This vignette will detail how to download environmental/oceanographic satellite data from ERDDAP servers using the rerddap package."
   }
 ]

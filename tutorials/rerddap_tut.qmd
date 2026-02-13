@@ -3,4 +3,4 @@ title: "Downloading Environmental Data using rerddap"
 format: html
 ---
 
-This vignette will detail how to download environmental/oceanographic satellite data from ERDDAP servers using the rerddap package
+This vignette will detail how to download environmental/oceanographic satellite data from ERDDAP servers using the rerddap package.
