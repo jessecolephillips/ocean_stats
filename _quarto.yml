@@ -11,8 +11,7 @@ website:
       - blogs.qmd
       - text: Tutorials
         menu: 
-          - text: "placeholder 1"
-          - text: "placeholder 2"
+          - tutorials/rerddap_tut.qmd
       - about.qmd
     tools:
       - icon: github
