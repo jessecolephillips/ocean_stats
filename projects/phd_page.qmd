@@ -13,6 +13,8 @@ This thesis defines ecoregions within the Benguela Eastern Boundary Upwelling Sy
 
 The research aims to understand how physical oceanographic features (upwelling) structure the ecosystem and influence the distribution of key primary producers like kelp and phytoplankton.
 
+![](../images/west_coast_sst_wind_chla_map.png)
+
 ------------------------------------------------------------------------
 
 # PhD Research Timeline
