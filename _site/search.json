@@ -54,5 +54,19 @@
     "title": "Downloading Environmental Data using rerddap",
     "section": "",
     "text": "This vignette will detail how to download environmental/oceanographic satellite data from ERDDAP servers using the rerddap package."
+  },
+  {
+    "objectID": "tutorials/rerddap_tut.html#load-packages",
+    "href": "tutorials/rerddap_tut.html#load-packages",
+    "title": "Downloading Environmental Data using rerddap",
+    "section": "Load Packages",
+    "text": "Load Packages\nInstall and load the necessary packages; rerddap to access ERDDAP servers with R, dplyr to manipulate the incoming data and ggplot2 to to create visuals.\n\nlibrary(rerddap)\nlibrary(dplyr)\nlibrary(ggplot2)"
+  },
+  {
+    "objectID": "tutorials/rerddap_tut.html#select-data-product",
+    "href": "tutorials/rerddap_tut.html#select-data-product",
+    "title": "Downloading Environmental Data using rerddap",
+    "section": "Select Data Product",
+    "text": "Select Data Product\nChoose a data product from an available ERDDAP server. Ensure that the URL connects, by using the info() function from the rerddap package and viewing the information from the selected data product."
   }
 ]
