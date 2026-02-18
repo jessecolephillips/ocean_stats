@@ -1008,6 +1008,32 @@
         "Built": "R 4.5.2; x86_64-pc-linux-gnu; 2026-01-13 16:19:35 UTC; unix"
       }
     },
+    "maps": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "maps",
+        "Title": "Draw Geographical Maps",
+        "Version": "3.4.3",
+        "Date": "2025-05-15",
+        "Description": "Display of maps.  Projection code and larger maps are in\n             separate packages ('mapproj' and 'mapdata').",
+        "Depends": "R (>= 3.5.0)",
+        "Imports": "graphics, utils",
+        "LazyData": "yes",
+        "Suggests": "mapproj (>= 1.2-0), mapdata (>= 2.3.0), sf, rnaturalearth",
+        "License": "GPL-2",
+        "URL": "https://github.com/adeckmyn/maps",
+        "BugReports": "https://github.com/adeckmyn/maps/issues",
+        "Authors@R": "c(person(given  = c(\"Richard\", \"A.\"),\n                    family = \"Becker\",\n                    role   = \"aut\",\n                    comment= \"Original S code\"),\n             person(given  = c(\"Allan\", \"R.\"),\n                    family = \"Wilks\",\n                    role   = \"aut\",\n                    comment= \"Original S code\"),\n             person(given  = \"Ray\",\n                    family = \"Brownrigg\",\n                    role   = c(\"trl\", \"aut\"),\n                    comment= \"R version\"),\n             person(given  = c(\"Thomas\", \"P.\"),\n                    family = \"Minka\",\n                    role   = \"aut\",\n                    comment= \"Enhancements\"),\n             person(given  = \"Alex\",\n                    family = \"Deckmyn\",\n                    role   = c(\"aut\", \"cre\"),\n                    comment= c(ORCID=\"0009-0002-2010-8310\"),\n                    email  = \"alex.deckmyn@meteo.be\"))",
+        "NeedsCompilation": "yes",
+        "Repository": "CRAN",
+        "Packaged": "2025-05-19 08:35:55 UTC; alex",
+        "Author": "Richard A. Becker [aut] (Original S code),\n  Allan R. Wilks [aut] (Original S code),\n  Ray Brownrigg [trl, aut] (R version),\n  Thomas P. Minka [aut] (Enhancements),\n  Alex Deckmyn [aut, cre] (ORCID:\n    <https://orcid.org/0009-0002-2010-8310>)",
+        "Maintainer": "Alex Deckmyn <alex.deckmyn@meteo.be>",
+        "Date/Publication": "2025-05-26 17:40:02 UTC",
+        "Built": "R 4.5.2; x86_64-pc-linux-gnu; 2026-02-02 06:17:20 UTC; unix"
+      }
+    },
     "memoise": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -1817,7 +1843,7 @@
       "checksum": "a32510dc83c7028a706abf7364d36d61"
     },
     "_site/search.json": {
-      "checksum": "c26e2bac724c2acb1cb26ebdb7e6f3ce"
+      "checksum": "20e3d5e4a4a256a3c57ac44459a2d2af"
     },
     "_site/site_libs/bootstrap/bootstrap-3d3dfe2514414d3bbf2f9c879f5a3d94.min.css": {
       "checksum": "3d3dfe2514414d3bbf2f9c879f5a3d94"
@@ -1880,7 +1906,7 @@
       "checksum": "cd6fc8e9f332d4b7006d5451735b3b07"
     },
     "_site/tutorials/rerddap_tut.html": {
-      "checksum": "d1a2b076c4f9b5500c2bb5711f9ab6e1"
+      "checksum": "36fe505318fbfcffe868e263ede0e598"
     },
     "about.qmd": {
       "checksum": "00b83f0d788571ccd262ac7b66f16499"
@@ -1943,7 +1969,7 @@
       "checksum": "58665f7c30dfdeb7d6e75537dc8f7ce6"
     },
     "tutorials/rerddap_tut.qmd": {
-      "checksum": "6431931c5ab17f198c0db3e97a031cab"
+      "checksum": "a4260d6cc2d30cec3312816acbb57d7b"
     }
   },
   "users": null
