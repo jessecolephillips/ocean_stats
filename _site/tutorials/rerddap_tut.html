@@ -373,11 +373,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This vignette will detail how to download environmental/oceanographic satellite data from ERDDAP servers using the <code>rerddap</code> package.</p>
 <section id="load-packages" class="level2">
 <h2 class="anchored" data-anchor-id="load-packages">Load Packages</h2>
-<p>Install and load the necessary packages; <code>rerddap</code> to access ERDDAP servers with R, <code>dplyr</code> to manipulate the incoming data and <code>ggplot2</code> to to create visuals.</p>
+<p>Install and load the necessary packages; <code>rerddap</code> to access ERDDAP servers with R, <code>dplyr</code> to manipulate the incoming data and <code>ggplot2</code> to to create visuals. The <code>stringr</code> package is used to clean up received data later.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rerddap)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="select-data-product" class="level2">

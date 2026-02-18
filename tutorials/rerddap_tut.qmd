@@ -7,11 +7,12 @@ This vignette will detail how to download environmental/oceanographic satellite 
 
 ## Load Packages
 
-Install and load the necessary packages; `rerddap` to access ERDDAP servers with R, `dplyr` to manipulate the incoming data and `ggplot2` to to create visuals.
+Install and load the necessary packages; `rerddap` to access ERDDAP servers with R, `dplyr` to manipulate the incoming data and `ggplot2` to to create visuals. The `stringr` package is used to clean up received data later.
 
 ```{r, message = F}
 library(rerddap)
 library(dplyr)
+library(stringr)
 library(ggplot2)
 ```
 
