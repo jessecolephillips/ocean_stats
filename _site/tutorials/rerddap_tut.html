@@ -338,6 +338,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#load-packages" id="toc-load-packages" class="nav-link active" data-scroll-target="#load-packages">Load Packages</a></li>
   <li><a href="#select-data-product" id="toc-select-data-product" class="nav-link" data-scroll-target="#select-data-product">Select Data Product</a></li>
+  <li><a href="#set-up-variables" id="toc-set-up-variables" class="nav-link" data-scroll-target="#set-up-variables">Set Up Variables</a></li>
+  <li><a href="#download-data" id="toc-download-data" class="nav-link" data-scroll-target="#download-data">Download Data</a>
+  <ul class="collapse">
+  <li><a href="#save-.nc-file" id="toc-save-.nc-file" class="nav-link" data-scroll-target="#save-.nc-file">1. Save .nc File</a></li>
+  <li><a href="#load-data-into-environment" id="toc-load-data-into-environment" class="nav-link" data-scroll-target="#load-data-into-environment">2. Load Data into Environment</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -377,8 +383,164 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="select-data-product" class="level2">
 <h2 class="anchored" data-anchor-id="select-data-product">Select Data Product</h2>
 <p>Choose a data product from an available ERDDAP server. Ensure that the URL connects, by using the <code>info()</code> function from the <code>rerddap</code> package and viewing the information from the selected data product.</p>
+<p>For this example, we’ll use the NOAA Coastwatch ERDDAP server - found at <a href="https://coastwatch.noaa.gov/erddap/" class="uri">https://coastwatch.noaa.gov/erddap/</a> - and use the dataset titled: “Sea-Surface Temperature, NOAA ACSPO Daily Global 0.02° Gridded Super-collated SST # and Thermal Fronts Reanalysis, 2012-present, Daily (L3S-LEO Kelvin)”. The <code>info()</code> function will use the dataset’s ID from the linked server to pull an information summary:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">info</span>(<span class="st">"noaacwLEOACSPOSSTL3SCDaily"</span>, <span class="at">url =</span> <span class="st">"https://coastwatch.noaa.gov/erddap/"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;ERDDAP(TM) info&gt; noaacwLEOACSPOSSTL3SCDaily 
+ Base URL: https://coastwatch.noaa.gov/erddap 
+ Dataset Type: griddap 
+ Dimensions (range):  
+     time: (2000-02-24T12:00:00Z, 2025-12-14T12:00:00Z) 
+     latitude: (-89.99, 89.99) 
+     longitude: (-179.99, 179.99) 
+ Variables:  
+     dt_analysis: 
+         Units: kelvin 
+     l2p_flags: 
+     l3s_flags: 
+     measurement_dtime: 
+         Units: seconds 
+     quality_level: 
+     satellite_zenith_angle: 
+         Units: degrees 
+     sea_ice_fraction: 
+         Units: 1 
+     sea_surface_temperature: 
+         Units: degree_C 
+     sses_bias: 
+         Units: kelvin 
+     sses_standard_deviation: 
+         Units: kelvin 
+     sst_count: 
+     sst_dtime: 
+         Units: seconds 
+     sst_front_position: 
+     sst_gradient_magnitude: 
+         Units: kelvin/km 
+     sst_source: 
+     wind_speed: 
+         Units: m s-1 </code></pre>
+</div>
+</div>
+<p>We see that this data product has three dimensions, which form the limits of the spatio-temporal range of the data: time, latitude and longitude; along with a number of variables that each contain environmental data for each of the dimensions. We will extract sea surface temperature (SST) from the variable named <code>sea_surface_temperature</code>. There are two methods to do this: downloading a NetCDF file and saving it to your PC’s storage, or loading the data straight into your R environment as a data frame.</p>
+</section>
+<section id="set-up-variables" class="level2">
+<h2 class="anchored" data-anchor-id="set-up-variables">Set Up Variables</h2>
+<p>Let’s explicitly set up all the variables we’ll need, including the dataset, URL, time and area bounds.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set data set ID and URL of chosen data product</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dataset_id <span class="ot">&lt;-</span> <span class="st">"noaacwLEOACSPOSSTL3SCDaily"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>dataset_url <span class="ot">&lt;-</span> <span class="st">"https://coastwatch.noaa.gov/erddap/"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Set spatial and temporal bounds</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>lats <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">38</span>, <span class="sc">-</span><span class="dv">24</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>longs <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">14</span>, <span class="dv">35</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>dates <span class="ot">=</span> <span class="fu">c</span>(<span class="st">'2020-01-01'</span>, <span class="st">'2020-01-01'</span>) <span class="co"># This bound CAN be just one day if needed (but two values are still required)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This sets up our functions to download just one day of data within the general bounds of southern Afrcia.</p>
+</section>
+<section id="download-data" class="level2">
+<h2 class="anchored" data-anchor-id="download-data">Download Data</h2>
+<section id="save-.nc-file" class="level3">
+<h3 class="anchored" data-anchor-id="save-.nc-file">1. Save .nc File</h3>
+<p>The first method includes saving a NetCDF file someone onto your storage using the <code>griddap()</code> function. The parameters of this include include the dataset ID, URL, and temporal and spatial bounds set earlier. Pay careful attention to the <code>store</code> parameter, and ensure that this is set to the exact spot on your local storage where you would like this .nc file to be saved. Additionally, ensure that the <code>read</code> parameter in this function is set to <code>FALSE</code>, so that the data is not read into your memory (RAM).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This code chunk is commented out so that it is not run.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># griddap(</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   datasetx = dataset_id,</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#   time = dates,</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#   latitude = lats,</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#   longitude = longs,</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#   url = dataset_url,</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#   store = disk(path = "~/ocean_stats/data"), # Edit pathway here</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">#   read = FALSE</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># )</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="load-data-into-environment" class="level3">
+<h3 class="anchored" data-anchor-id="load-data-into-environment">2. Load Data into Environment</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sst_data <span class="ot">&lt;-</span> <span class="fu">griddap</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">datasetx =</span> dataset_id,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">time =</span> dates,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">latitude =</span> lats,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">longitude =</span> longs,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">fields =</span> <span class="st">"sea_surface_temperature"</span>, <span class="co"># Specifiacallty only pulls the SST variable</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">fmt =</span> <span class="st">"csv"</span>, <span class="co"># To be read as a dataframe in the R environment</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">url =</span> dataset_url,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">store =</span> <span class="fu">memory</span>()</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">time =</span> <span class="fu">as.Date</span>(stringr<span class="sc">::</span><span class="fu">str_remove</span>(time, <span class="st">"T00:00:00Z"</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">rename</span>(</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">t =</span> time,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">lat =</span> latitude,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">lon =</span> longitude,</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">sst =</span> sea_surface_temperature</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co"># The second half of the function (after the pipe symbol) uses dplyr functions to edit the resulting data</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co"># frame into something a bit more useable than before.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Plots</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save plot as an object</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sst_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(sst_data, <span class="fu">aes</span>(<span class="at">x =</span> lon, <span class="at">y =</span> lat)) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_raster</span>(<span class="fu">aes</span>(<span class="at">fill =</span> sst)) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_borders</span>(<span class="at">col =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"cornsilk"</span>, <span class="at">linewidth =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_equal</span>(<span class="at">xlim =</span> longs, <span class="at">ylim =</span> lats, <span class="at">expand =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># geom_point(</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   data = coastal_towns,</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   aes(x = lon, y = lat),</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   shape = 21,</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   size = 3,</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   fill = "#db0e0eff"</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ) +</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># geom_label(</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   data = coastal_towns,</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   aes(x = lon, y = lat, label = names),</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   nudge_y = 0.5</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ) +</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># scale_x_continuous(</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   breaks = seq(15, 35, 5),</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   labels = c("15°E", "20°E", "25°E", "30°E", "35°E"),</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   position = "bottom"</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ) +</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># scale_y_continuous(</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   breaks = seq(-36, -24, 4),</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   labels = c("36.0°S", "32.0°S", "28.0°S", "24.0°S"),</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   position = "right"</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ) +</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">"#03064eff"</span>, <span class="at">high =</span> <span class="st">"#35beebff"</span>) <span class="sc">+</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"SST around southern Africa"</span>,</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>    <span class="co">#subtitle = sst_data$t,</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"SST (°C)"</span>,</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>    <span class="co">#caption = "Sea Surface Temperature, NOAA Coral Reef Watch Daily Global 5km Satellite SST (CoralTemp), 1985-present, Daily"</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.9</span>),</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.direction =</span> <span class="st">"horizontal"</span>,</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>)</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="co"># FOR </span><span class="al">TESTING</span><span class="co">: show plot in viewer pane</span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>sst_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="rerddap_tut_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
