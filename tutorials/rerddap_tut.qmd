@@ -7,13 +7,14 @@ This vignette will detail how to download environmental/oceanographic satellite 
 
 ## Load Packages
 
-Install and load the necessary packages; `rerddap` to access ERDDAP servers with R, `dplyr` to manipulate the incoming data and `ggplot2` to to create visuals. The `stringr` package is used to clean up received data later.
+Install and load the necessary packages; `rerddap` to access ERDDAP servers with R, `dplyr` to manipulate the incoming data and `ggplot2` plus `maps` to to create visuals. The `stringr` package is used to clean up received data later.
 
-```{r, message = F}
+```{r, eval = FALSE}
 library(rerddap)
 library(dplyr)
 library(stringr)
 library(ggplot2)
+library(maps)
 ```
 
 ## Select Data Product
@@ -22,7 +23,7 @@ Choose a data product from an available ERDDAP server. Ensure that the URL conne
 
 For this example, we'll use the NOAA Coastwatch ERDDAP server - found at <https://coastwatch.noaa.gov/erddap/> - and use the dataset titled: "Sea-Surface Temperature, NOAA ACSPO Daily Global 0.02° Gridded Super-collated SST \# and Thermal Fronts Reanalysis, 2012-present, Daily (L3S-LEO Kelvin)". The `info()` function will use the dataset's ID from the linked server to pull an information summary:
 
-```{r}
+```{r, eval = FALSE}
 info("noaacwLEOACSPOSSTL3SCDaily", url = "https://coastwatch.noaa.gov/erddap/")
 ```
 
@@ -32,7 +33,7 @@ We see that this data product has three dimensions, which form the limits of the
 
 Let's explicitly set up all the variables we'll need, including the dataset, URL, time and area bounds.
 
-```{r}
+```{r, eval = FALSE}
 # Set data set ID and URL of chosen data product
 dataset_id <- "noaacwLEOACSPOSSTL3SCDaily"
 dataset_url <- "https://coastwatch.noaa.gov/erddap/"
@@ -51,7 +52,7 @@ This sets up our functions to download just one day of data within the general b
 
 The first method includes saving a NetCDF file someone onto your storage using the `griddap()` function. The parameters of this include include the dataset ID, URL, and temporal and spatial bounds set earlier. Pay careful attention to the `store` parameter, and ensure that this is set to the exact spot on your local storage where you would like this .nc file to be saved. Additionally, ensure that the `read` parameter in this function is set to `FALSE`, so that the data is not read into your memory (RAM).
 
-```{r}
+```{r, eval = FALSE}
 # This code chunk is commented out so that it is not run.
 
 # griddap(
@@ -67,7 +68,7 @@ The first method includes saving a NetCDF file someone onto your storage using t
 
 ### 2. Load Data into Environment
 
-```{r}
+```{r, eval = FALSE}
 sst_data <- griddap(
   datasetx = dataset_id,
   time = dates,
@@ -93,7 +94,7 @@ sst_data <- griddap(
 
 Plots
 
-```{r}
+```{r, eval = FALSE}
 # Save plot as an object
 sst_map <- ggplot(sst_data, aes(x = lon, y = lat)) +
   geom_raster(aes(fill = sst)) +
